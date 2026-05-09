@@ -1,57 +1,59 @@
-# Hydrological CN & LagTime Statistical Analysis
+# Hydrological CN \& LagTime Statistical Analysis
 
 MATLAB scripts for Pearson correlation analysis and residual diagnostics in watershed hydrology research.  
-Developed as part of a graduate thesis (서울시립대학교).
+Developed as part of a graduate thesis at the University of Seoul.
 
----
+\---
 
 ## File Overview
 
-| 파일명 | 분석 내용 |
-|---|---|
-| `01_CN_Pearson_Correlation.m` | 공식 CN(2010년) vs 지형/임상 인자 다중 상관분석 |
-| `02_Factor_Impact_Evaluation.m` | CN·LagTime vs 지형/임상/토양/경사 인자 영향도 평가 |
-| `03_CN_Runoff_Validation.m` | 공식 CN vs 최종 유출계수(Runoff) 검증 |
-| `04_Runoff_CN_LagTime_Comparison.m` | Runoff vs CN·LagTime 비교 및 p-value 시각화 |
-| `05_CN_LagTime_CrossCorrelation.m` | CN과 LagTime 간 교차 상관관계 |
-| `06_Residual_Analysis.m` | 공간적 오차 전파 분석 + 시계열 표준화 잔차 분석 |
+|File|Description|
+|-|-|
+|`01\_CN\_Pearson\_Correlation.m`|Pearson correlation between official CN (2010) and terrain / forest stand factors|
+|`02\_Factor\_Impact\_Evaluation.m`|Impact evaluation of terrain, forest, soil, and slope factors on CN and LagTime|
+|`03\_CN\_Runoff\_Validation.m`|Validation scatter plot of official CN vs final runoff coefficient|
+|`04\_Runoff\_CN\_LagTime\_Comparison.m`|Runoff vs CN \& LagTime comparison with p-value bar chart|
+|`05\_CN\_LagTime\_CrossCorrelation.m`|Cross-correlation between CN and LagTime|
+|`06\_Residual\_Analysis.m`|Spatial error propagation analysis + time-series standardized residual analysis|
 
----
+\---
 
-## 사용 방법
+## Usage
 
-1. MATLAB에서 해당 `.m` 파일을 실행합니다.
-2. 파일 선택 팝업이 나타나면 분석할 엑셀(`.xlsx` / `.xls`) 파일을 선택합니다.
-3. 결과는 MATLAB 커맨드 창(텍스트)과 Figure 창(그래프)으로 출력됩니다.
+1. Open any `.m` file in MATLAB and run it.
+2. A file dialog will appear — select the Excel (`.xlsx` / `.xls`) file you want to analyze.
+3. Results are printed to the Command Window (text) and displayed as Figure windows (plots).
 
-> **참고:** 각 스크립트 상단의 주석에 열 이름 키워드 및 열 번호 설정 방법이 안내되어 있습니다.  
-> 엑셀 구조가 다를 경우 해당 부분만 수정하면 됩니다.
+> \*\*Note:\*\* Column name keywords and column index settings are documented in the comment header of each script. Adjust only those lines if your Excel structure differs.
 
----
+\---
 
-## 주요 분석 방법
+## Methods
 
-- **피어슨 상관분석 (Pearson r)**: 선형 상관계수 및 p-value 산출
-- **유의수준**: p < 0.01 (`**`), p < 0.05 (`*`), 그 외 (`ns`)
-- **면적 비율 변환**: 임상·토양·경사 면적 인자는 유역면적으로 나누어 비율(%)로 변환 후 분석
-- **오차 전파 분석**: 위상 순서 기반 독립 오차 vs 전파 오차 분리 (HEC-HMS 결과 대상)
-- **모델 평가지표**: RMSE, NSE(Nash-Sutcliffe Efficiency), R²
+* **Pearson correlation (r)**: Linear correlation coefficient and two-tailed p-value via `corrcoef()`
+* **Significance levels**: p < 0.01 (`\*\*`), p < 0.05 (`\*`), otherwise (`ns`)
+* **Area ratio conversion**: Forest stand, soil type, and slope interval areas are divided by watershed area before analysis
+* **Error propagation**: Topological separation of local vs. propagated error in HEC-HMS simulation results
+* **Model performance metrics**: RMSE, NSE (Nash-Sutcliffe Efficiency), R²
 
----
+\---
 
-## 요구 사항
+## Requirements
 
-- MATLAB R2019b 이상 (로컬 함수 지원)
-- 추가 Toolbox 불필요
+* MATLAB R2019b or later (required for local functions)
+* No additional toolboxes needed
 
----
+\---
 
-## 변수명 약어 정리
+## Glossary
 
-| 약어 | 설명 |
-|---|---|
-| CN | Curve Number (유출곡선지수) |
-| LagTime | 유역 지연시간 (hr) |
-| Runoff_C | 최종 유출계수 |
-| NSE | Nash-Sutcliffe Efficiency (모형 효율 계수) |
-| RMSE | Root Mean Square Error |
+|Term|Definition|
+|-|-|
+|CN|Curve Number — index of rainfall-runoff response|
+|LagTime|Watershed lag time (hr)|
+|Runoff\_C|Final runoff coefficient|
+|NSE|Nash-Sutcliffe Efficiency — model performance index|
+|RMSE|Root Mean Square Error|
+
+
+
