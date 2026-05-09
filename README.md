@@ -3,7 +3,6 @@
 MATLAB scripts for Pearson correlation analysis and residual diagnostics in watershed hydrology research.  
 Developed as part of a graduate thesis at the University of Seoul.
 
-\---
 
 ## File Overview
 
@@ -16,7 +15,6 @@ Developed as part of a graduate thesis at the University of Seoul.
 |`05\_CN\_LagTime\_CrossCorrelation.m`|Cross-correlation between CN and LagTime|
 |`06\_Residual\_Analysis.m`|Spatial error propagation analysis + time-series standardized residual analysis|
 
-\---
 
 ## Usage
 
@@ -26,7 +24,6 @@ Developed as part of a graduate thesis at the University of Seoul.
 
 > \*\*Note:\*\* Column name keywords and column index settings are documented in the comment header of each script. Adjust only those lines if your Excel structure differs.
 
-\---
 
 ## Methods
 
@@ -36,14 +33,12 @@ Developed as part of a graduate thesis at the University of Seoul.
 * **Error propagation**: Topological separation of local vs. propagated error in HEC-HMS simulation results
 * **Model performance metrics**: RMSE, NSE (Nash-Sutcliffe Efficiency), R²
 
-\---
 
 ## Requirements
 
 * MATLAB R2019b or later (required for local functions)
 * No additional toolboxes needed
 
-\---
 
 ## Glossary
 
